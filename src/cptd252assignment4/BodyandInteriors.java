@@ -14,11 +14,14 @@ public class BodyandInteriors implements carParts {
         System.out.print("New Body is being manufactured now");
         System.out.print(".");
         Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
-        System.out.println("\ncompleted. S/N is ENG-" + this.hashCode());
-        this.SN = "ENG-" + this.hashCode();
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.println("\ncompleted. S/N is CHS-" + this.hashCode());
+        this.SN = "CHS-" + this.hashCode();
         this.observers = new ArrayList<>();
         this.notifyy();
 
@@ -57,7 +60,7 @@ public class BodyandInteriors implements carParts {
     }
 
     public void attach(Observer observer) {
-               this.observers.add(observer);
+        this.observers.add(observer);
 
         // TODO implement here
     }
@@ -76,6 +79,10 @@ public class BodyandInteriors implements carParts {
      */
     public void notifyy() {
         for (Observer observer : observers) {
+            System.out.println("*******************************");
+            System.out.println("********     ALERT     ********");
+            System.out.println("*******************************");
+
             observer.update(this);
         }
         // TODO implement here

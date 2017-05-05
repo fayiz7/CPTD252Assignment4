@@ -48,9 +48,11 @@ public class Engineer implements Observer {
             this.engine = (Engine) i;
             System.out.println(" he have engine sn:" + engine.getSN());
         } else if (i instanceof GearBox) {
+            System.out.println("Engineer got update that GearBox is manufactured");
             this.gearBox = (GearBox) i;
             System.out.println(" he have gearbox sn:" + gearBox.getSN());
         } else if (i instanceof BodyandInteriors) {
+            System.out.println("Engineer got update that Body is manufactured");
             this.bodyAndInteriors = (BodyandInteriors) i;
             System.out.println(" he have bodyandint sn:" + bodyAndInteriors.getSN());
 

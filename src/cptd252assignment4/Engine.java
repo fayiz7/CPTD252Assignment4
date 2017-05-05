@@ -14,9 +14,9 @@ public class Engine implements carParts {
     public Engine() throws InterruptedException {
         System.out.print("new Engine is being manufactured now");
         System.out.print(".");Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
-//        System.out.print(".");Thread.sleep(750);
+        System.out.print(".");Thread.sleep(750);
+        System.out.print(".");Thread.sleep(750);
+        System.out.print(".");Thread.sleep(750);
         System.out.println("\ncompleted. S/N is ENG-"+this.hashCode());
                this.SN="ENG-"+this.hashCode();
                this.observers=new ArrayList<>();
@@ -76,6 +76,9 @@ public class Engine implements carParts {
     public void notifyy() {
         // TODO implement here
                 for (Observer observer : observers) {
+                    System.out.println("*******************************");
+                    System.out.println("********     ALERT     ********");
+                    System.out.println("*******************************");
                     observer.update(this);
             
         }
