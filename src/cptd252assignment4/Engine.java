@@ -1,10 +1,9 @@
 package cptd252assignment4;
 
-
 import java.util.*;
 
 /**
- * 
+ *
  */
 public class Engine implements carParts {
 
@@ -13,27 +12,30 @@ public class Engine implements carParts {
      */
     public Engine() throws InterruptedException {
         System.out.print("new Engine is being manufactured now");
-        System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
-        System.out.println("\ncompleted. S/N is ENG-"+this.hashCode());
-               this.SN="ENG-"+this.hashCode();
-               this.observers=new ArrayList<>();
-               //this.notifyy();
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.print(".");
+        Thread.sleep(750);
+        System.out.println("\ncompleted. S/N is ENG-" + this.hashCode());
+        this.SN = "ENG-" + this.hashCode();
+        this.observers = new ArrayList<>();
+        //this.notifyy();
     }
 
     /**
-     * 
+     *
      */
     private String SN;
 
     /**
-     * 
+     *
      */
     private ArrayList<Observer> observers;
 
-    
     public String getSN() {
         return SN;
         // TODO implement here
@@ -49,20 +51,20 @@ public class Engine implements carParts {
     }
 
     /**
-     * @param observer 
+     * @param observer
      * @return
      */
-    public void setObservers(ArrayList<Observer> observers) {    
+    public void setObservers(ArrayList<Observer> observers) {
         this.observers = observers;
     }
 
-    public void attach(Observer observer) { 
-       this.observers.add(observer);
+    public void attach(Observer observer) {
+        this.observers.add(observer);
         // TODO implement here
     }
 
     /**
-     * @param observer 
+     * @param observer
      * @return
      */
     public void detach(Observer observer) {
@@ -75,21 +77,20 @@ public class Engine implements carParts {
      */
     public void notifyy() {
         // TODO implement here
-                for (Observer observer : observers) {
-                    System.out.println("*******************************");
-                    System.out.println("********     ALERT     ********");
-                    System.out.println("*******************************");
-                    observer.update(this);
-            
+        for (Observer observer : observers) {
+            System.out.println("*******************************");
+            System.out.println("********     ALERT     ********");
+            System.out.println("*******************************");
+            observer.update(this);
+
         }
-        
 
     }
-    
+
     //dr marwan just ignore this method as it is only used for testing ,, to test if this object really registered the observer  
-    public void printObserver(){
+    public void printObserver() {
         for (Observer observer : observers) {
-            System.out.println("observers are "+observer.hashCode());
+            System.out.println("observers are " + observer.hashCode());
         }
     }
 

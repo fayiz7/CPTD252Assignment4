@@ -23,7 +23,7 @@ public class BodyandInteriors implements carParts {
         System.out.println("\ncompleted. S/N is CHS-" + this.hashCode());
         this.SN = "CHS-" + this.hashCode();
         this.observers = new ArrayList<>();
-        this.notifyy();
+       // this.notifyy();
 
     }
 
