@@ -16,13 +16,22 @@ public class CPTD252Assignment4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws InterruptedException {
-       
+       Engineer engineer = new Engineer();
        Engine a = new Engine();
-       // System.out.println(a.hashCode());
-        a= new Engine();
+       a.attach(engineer);       //a.printObserver();
+       a.notifyy();
+
+        
        // System.out.println(a.hashCode());
         GearBox b =new GearBox();
-        b = new GearBox();
+        b.attach(engineer);
+        b.notifyy();
+        
+        BodyandInteriors c = new BodyandInteriors();
+        c.attach(engineer);
+        c.notifyy();
+        
+        
     }
     
 }

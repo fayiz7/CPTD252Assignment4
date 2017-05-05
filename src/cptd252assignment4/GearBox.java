@@ -14,11 +14,12 @@ public class GearBox implements carParts {
     public GearBox() throws InterruptedException {
         System.out.print("New GearBox is being manufactured now");
         System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
-        System.out.print(".");Thread.sleep(750);
+//        System.out.print(".");Thread.sleep(750);
+//        System.out.print(".");Thread.sleep(750);
+//        System.out.print(".");Thread.sleep(750);
         System.out.println("\ncompleted. S/N is ENG-"+this.hashCode());
                this.SN="ENG-"+this.hashCode();
+               this.observers=new ArrayList<>();
                
 
     }
@@ -57,7 +58,8 @@ public class GearBox implements carParts {
 
     public void attach(Observer observer) {
         // TODO implement here
-        observers.add(observer);
+        this.observers.add(observer);
+        
     }
 
     /**
@@ -77,7 +79,7 @@ public class GearBox implements carParts {
         // TODO implement here
         for(Observer o: observers){
             
-            o.update();
+            o.update(this);
         }
         
     }
